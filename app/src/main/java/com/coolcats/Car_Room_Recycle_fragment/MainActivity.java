@@ -86,8 +86,9 @@ public class MainActivity extends AppCompatActivity implements InputFragment.Car
     }
 
     private void getDisplayUser(List<Car> car) {
+        Log.d("TAG_X" , "DataBase: " +"\n");
         for(int i =0; i < car.size(); i++){
-            Log.d("TAG_X", car.get(i).toString());
+            Log.d("TAG_X",  car.get(i).toString());
         }
     }
 }

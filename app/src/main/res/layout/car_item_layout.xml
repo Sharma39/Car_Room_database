@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardBackgroundColor="#E8F193"
+    app:cardCornerRadius="16dp"
     android:layout_margin="16dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#C7F690"
         >
+
         <TextView
             android:id="@+id/id_textview"
             android:layout_width="100dp"
@@ -61,6 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:textSize="15dp"
+            android:background="@drawable/ic_item"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/car_textview"
