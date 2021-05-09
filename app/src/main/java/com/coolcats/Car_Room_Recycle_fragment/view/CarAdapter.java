@@ -16,6 +16,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarsViewHolder> 
     private List<Car> cars;
 
     private UpdateCarDelegate updateCarDelegate;
+//    private RemoveCarDelegate removeCarDelegate;
 
     public CarAdapter(List<Car> cars) {
         this.cars = cars;
@@ -29,7 +30,13 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarsViewHolder> 
     public interface UpdateCarDelegate{
 //        void selectCar(Car car);
         void updateCar(Car car);
+        void removeCar(Car car);
     }
+
+//    public interface RemoveCarDelegate{
+//        //void updateCar(Car car);
+//        void removeCar(Car car);
+//    }
 
     @NonNull
     @Override
@@ -63,6 +70,10 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarsViewHolder> 
 
         holder.binding.availButton.setOnClickListener(v -> {
             updateCarDelegate.updateCar(car);
+        });
+
+        holder.binding.removeButton.setOnClickListener(v -> {
+            updateCarDelegate.removeCar(car);
         });
     }
 

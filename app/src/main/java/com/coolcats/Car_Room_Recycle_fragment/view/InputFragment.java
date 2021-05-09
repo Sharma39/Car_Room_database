@@ -19,6 +19,7 @@ public class InputFragment extends Fragment {
 
     public interface CarDelegate {
         void insertCar(Car car);
+        void clearAll();
     }
     private CarDelegate carDelegate;
 
@@ -46,6 +47,10 @@ public class InputFragment extends Fragment {
             binding.priceEdittext.setText("0.00");
             binding.licenceEdittext.setText("");
 
+        });
+
+        binding.clearButton.setOnClickListener(v -> {
+            carDelegate.clearAll();
         });
     }
 

@@ -24,6 +24,7 @@ public class InfoFragment extends Fragment {
     private CarAdapter carAdapter;
 
     private CarAdapter.UpdateCarDelegate updateCarDelegate;
+//    private CarAdapter.RemoveCarDelegate removeCarDelegate;
 
     @Nullable
     @Override

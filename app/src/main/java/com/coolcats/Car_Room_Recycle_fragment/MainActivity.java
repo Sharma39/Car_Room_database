@@ -43,6 +43,18 @@ public class MainActivity extends AppCompatActivity implements InputFragment.Car
         }.start();
     }
 
+    @Override
+    public void clearAll() {
+        new Thread() {
+            @Override
+            public void run() {
+                super.run();
+                RFGDatabase.getDatabase(MainActivity.this).getDAO().nukeTable();
+                readDatabase();
+            }
+        }.start();
+    }
+
     public void switchAvailability(int id){
         new Thread() {
             @Override
@@ -80,6 +92,18 @@ public class MainActivity extends AppCompatActivity implements InputFragment.Car
             public void run() {
                 super.run();
                 RFGDatabase.getDatabase(MainActivity.this).getDAO().toggleAvailability(car.getCarId());
+                readDatabase();
+            }
+        }.start();
+    }
+
+    @Override
+    public void removeCar(Car car) {
+        new Thread() {
+            @Override
+            public void run() {
+                super.run();
+                RFGDatabase.getDatabase(MainActivity.this).getDAO().deleteCar(car);
                 readDatabase();
             }
         }.start();

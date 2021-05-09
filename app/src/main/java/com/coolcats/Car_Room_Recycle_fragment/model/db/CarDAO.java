@@ -26,4 +26,8 @@ public interface CarDAO {
 
     @Delete
     void deleteCar(Car car);
+
+    @Query("DELETE FROM cars")
+    public void nukeTable();
+
 }
